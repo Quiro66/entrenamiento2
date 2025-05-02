@@ -16,4 +16,6 @@ Funciones:
 
 6. MENU DE OPCIONES (El usuario tendra un menu de opciones donde seleccionando con un número podra perdir la funcion para que se le ejecute.)
 
+## Nota: cuando lo corra le imprimira los resultados y le volvera a imprimir el menu asi que si, si imprime los datos XD
+
 

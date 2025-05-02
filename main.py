@@ -1,13 +1,14 @@
 #ejercicio de entrenamieto con funcionalidades, condicionales, ciclos 
-# MASTER2000
+# Nombre = MASTER2000 
 
 #lista para guardar las notas en global
 notas = []
 notas_apro = []
 notas_repro = []
 
-#funcion de ingresar notas de la cantidad del usuario
+#funcion de ingresar la cantidad de notas y ingresarlas una por una 
 def ingresar_notas() : 
+    #si el usuario ya ingreso notas y quiere ingresar otras diferentes se limpian las listas
     notas.clear()
     notas_apro.clear()
     notas_repro.clear()
@@ -45,7 +46,7 @@ def aprobacion_notas():
             print(f"Nota {i + 1}: {notas[i]} Reprobada")
             notas_repro.append(notas[i])
 
-#funcion para calcular el promedio de las notas
+#funcion para calcular el promedio de las notas y saber si aprobo con el promedio
 def promedio_notas():
     if len(notas) == 0:
         print("No hay notas ingresadas.")
@@ -58,7 +59,7 @@ def promedio_notas():
     else:
         print(f"Reprobastes el promedio de las notas es: {promedio}")
 
-#notas aprobadas y reprobadas
+#funcion para determinar cuantas notas fueron aprobadas y reprobadas con cantidad
 def cant_notas_apro_repro():
     print("--------------------------------")
     print("-----NOTAS-APROBADAS-SON--------")
@@ -76,12 +77,11 @@ def cant_notas_apro_repro():
 
 
 
-#funcion verificar y contar nota especificas
+#funcion verificar si se encuentra y cuantas veces esta una nota especifica
 def nota_espe ():
     try:
         print("--------------------------------")
         print("--------NOTAS-ESPECIFICA--------")
-
         print("--------------------------------")
         buscar = int(input("-INGRESE NOTA PARA SABER SI ESTA EN LAS NOTAS INGRESADAS ANTERIORMENTE"))
         contador = 0
@@ -89,8 +89,8 @@ def nota_espe ():
             for nota in notas:
                 if nota == buscar:
                     contador += 1
-
-        if contador > 1 :
+        #si en el contador hay almenos una nota especifica
+        if contador >= 1 :
             print(f"---LA-NOTA-ESPECIFICA-ESTA: {contador}-VECES")
         else:
             print("-NO-SE-ENCONTRO-NINGUNA-NOTA-ESPECIFICA-")
@@ -111,9 +111,9 @@ def menu ():
         print("5.--------NOTA-EXPECIFICA-------:") 
         print("6.-----------FINALIZAR----------:")
         print("/////////////////////////////////") 
-        opcion = input("-------INGRESE UNA OPCION--------")
+        opcion = input("-------INGRESE UNA OPCION--------\n")
         return opcion
-#Elaboramos n opcion para que el usuario selecione su funcion quedesea ver
+#Elaboramos un opcion para que el usuario selecione su funcion quedesea ver
 while True:
     try:
         opcion = menu()
