@@ -18,4 +18,4 @@ Funciones:
 
 ## Nota: cuando lo corra le imprimira los resultados y le volvera a imprimir el menu asi que si, si imprime los datos XD
 
-
+ELABORADO POR: JUAN JOSE QUIROZ BOLIVAR @Quiro66
