@@ -82,8 +82,10 @@ def nota_espe ():
             for nota in notas:
                 if nota == buscar:
                     contador +=1 
-
-        print(f"---LA-NOTA-ESPECIFICA-ESTA: {contador}-VECES")
+        if contador >1 :
+            print(f"---LA-NOTA-ESPECIFICA-ESTA: {contador}-VECES")
+        else:
+            print("-NO-SE-ENCONTRO-NINGUNA-NOTA-ESPECIFICA-")
     except ValueError:
         print("----ERROR-INSERTE-UN-NÚMERO------")
 
@@ -103,7 +105,7 @@ def menu ():
         print("/////////////////////////////////") 
         opcion = input("-------INGRESE UNA OPCION--------")
         return opcion
-    
+#Elaboramos n opcion para que el usuario selecione su funcion quedesea ver
 while True:
     try:
         opcion = menu()
