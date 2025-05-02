@@ -23,7 +23,7 @@ def ingresar_notas() :
                     notita = int(input(f"-INGRESE NOTA N°{i} (DEL 1 AL 100)-: \n"))
                     if 1 <= notita <= 100:
                         notas.append(notita)
-                        break  
+                        break
                     else:
                         print("--LA NOTA DEBE ESTAR ENTRE 1 AL 100--:")
                 except ValueError:
@@ -39,10 +39,10 @@ def aprobacion_notas():
     
     for i in range(len(notas)):
         if notas[i] >= 60:
-            print(f"Nota {i + 1}: {notas[i]} Aprobado")
+            print(f"Nota {i + 1}: {notas[i]} Aprobada")
             notas_apro.append(notas[i])
         else:
-            print(f"Nota {i + 1}: {notas[i]} Reprobado")
+            print(f"Nota {i + 1}: {notas[i]} Reprobada")
             notas_repro.append(notas[i])
 
 #funcion para calcular el promedio de las notas
@@ -52,23 +52,28 @@ def promedio_notas():
         return
     suma = sum(notas)
     promedio = suma / len(notas)
-    print(f"El promedio de las notas es: {promedio}")
+
+    if promedio >= 70:
+        print(f"Aprobastes el promedio de las notas es: {promedio}")
+    else:
+        print(f"Reprobastes el promedio de las notas es: {promedio}")
 
 #notas aprobadas y reprobadas
-def notas_apro_repro():
+def cant_notas_apro_repro():
     print("--------------------------------")
     print("-----NOTAS-APROBADAS-SON--------")
     print("--------------------------------")
     print(f"Total aprobadas: {len(notas_apro)}")
     for nota in notas_apro:
-        print(nota)
-    
+        print(f"Las notas son: {nota}")
+
     print("--------------------------------")
     print("----NOTAS-REPROBADAS-SON-------")
     print("--------------------------------")
     print(f"Total aprobadas: {len(notas_repro)}")
     for nota in notas_repro:
-        print(nota)
+        print(f"Las notas son: {nota}")
+
 
 
 #funcion verificar y contar nota especificas
@@ -76,13 +81,16 @@ def nota_espe ():
     try:
         print("--------------------------------")
         print("--------NOTAS-ESPECIFICA--------")
+
         print("--------------------------------")
         buscar = int(input("-INGRESE NOTA PARA SABER SI ESTA EN LAS NOTAS INGRESADAS ANTERIORMENTE"))
-        if 1 <= buscar < 100:
+        contador = 0
+        if 1 <= buscar <= 100:
             for nota in notas:
                 if nota == buscar:
-                    contador +=1 
-        if contador >1 :
+                    contador += 1
+
+        if contador > 1 :
             print(f"---LA-NOTA-ESPECIFICA-ESTA: {contador}-VECES")
         else:
             print("-NO-SE-ENCONTRO-NINGUNA-NOTA-ESPECIFICA-")
@@ -116,7 +124,7 @@ while True:
         elif opcion == "3":
             promedio_notas()
         elif opcion == "4":
-            notas_apro_repro()
+            cant_notas_apro_repro()
         elif opcion == "5":
             nota_espe()
         elif opcion == "6":
